@@ -1,0 +1,3 @@
+#  Python configuration
+
+using python : 2.7 : C:\Python27\python.exe ;
