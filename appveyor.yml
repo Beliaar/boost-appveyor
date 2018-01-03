@@ -1,5 +1,5 @@
 # Build worker image (VM template)
-image: Visual Studio 2015 Update 2
+image: Visual Studio 2017
 
 clone_depth: 5
 
@@ -16,14 +16,17 @@ environment:
   MSBUILD_FLAGS: /verbosity:minimal /maxcpucount
   matrix:
     #VS 14 + Py2.7
-    - PYTHON: "C:\\Python27"
-      PYTHON_VERSION: "2.7" 
+    #- PYTHON: "C:\\Python27"
+    #  PYTHON_VERSION: "2.7" 
     #VS 14 + Py3.4
-    - PYTHON: "C:\\Python34"
-      PYTHON_VERSION: "3.4"  
+    #- PYTHON: "C:\\Python34"
+    #  PYTHON_VERSION: "3.4"  
     #VS 14 + Py3.5
-    - PYTHON: "C:\\Python35"
-      PYTHON_VERSION: "3.5"  
+    #- PYTHON: "C:\\Python35"
+    #  PYTHON_VERSION: "3.5"  
+    #VS 14 + Py3.6
+    - PYTHON: "C:\\Python36"
+      PYTHON_VERSION: "3.6"  
 
 matrix:
   fast_finish: true
@@ -71,6 +74,7 @@ build_script:
         "2.7" {copy user-config-python2.jam "$env:userprofile\user-config.jam"}
         "3.4" {copy user-config-python34.jam "$env:userprofile\user-config.jam"}
         "3.5" {copy user-config-python35.jam "$env:userprofile\user-config.jam"}
+        "3.6" {copy user-config-python36.jam "$env:userprofile\user-config.jam"}
       }
   - ps: if (-not( Test-Path "build")) { mkdir build }
   - cd build
