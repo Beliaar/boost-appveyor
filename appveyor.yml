@@ -16,11 +16,11 @@ environment:
   MSBUILD_FLAGS: /verbosity:minimal /maxcpucount
   matrix:
     #VS 14 + Py2.7
-    #- PYTHON: "C:\\Python27"
-    #  PYTHON_VERSION: "2.7" 
+    - PYTHON: "C:\\Python27"
+      PYTHON_VERSION: "2.7"
     #VS 14 + Py3.4
-    #- PYTHON: "C:\\Python34"
-    #  PYTHON_VERSION: "3.4"  
+    - PYTHON: "C:\\Python34"
+      PYTHON_VERSION: "3.4"
     #VS 14 + Py3.5
     #- PYTHON: "C:\\Python35"
     #  PYTHON_VERSION: "3.5"  
