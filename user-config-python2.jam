@@ -1,3 +1,8 @@
 #  Python configuration
 
-using python : 2.7 : C:\Python27\python.exe ;
+using python 
+: 2.7
+: C:\Python27\python.exe 
+: C:\Python27\include
+: C:\Python27\libs
+;
