@@ -2,7 +2,7 @@
 
 using python: 
 3.6 
-: C:\Python36\python.exe 
-: C:\Python36\include
-: C:\Python36\libs
+: C:\\Python36\\python.exe 
+: C:\\Python36\\include
+: C:\\Python36\\libs
 ;
