@@ -32,7 +32,7 @@ matrix:
   fast_finish: true
 
 cache:
-  - C:\projects\boost-appveyor\build\boost_1_65_1.7z
+  - C:\projects\boost-appveyor\build\boost_1_64_0.7z
 
 # scripts that are called at very beginning, before repo cloning
 init:
@@ -80,12 +80,12 @@ build_script:
   - cd build
   # generate build script - SHARED LIB
   - ps: >-
-       if (-not( Test-Path "boost_1_65_1.7z"))
+       if (-not( Test-Path "boost_1_64_0.7z"))
        {
-        Invoke-WebRequest -Uri https://sourceforge.net/projects/boost/files/boost/1.65.1/boost_1_65_1.7z/download -OutFile boost_1_65_1.7z -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::FireFox
+        Invoke-WebRequest -Uri https://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.7z/download -OutFile boost_1_64_0.7z -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::FireFox
        }
-  - ps: 7z x boost_1_65_1.7z
-  - ps: cd boost_1_65_1
+  - ps: 7z x boost_1_64_0.7z
+  - ps: cd boost_1_64_0
   - ps: ./bootstrap.bat
   - ps: ./b2.exe install --prefix="..\install_python_$env:PYTHON_VERSION" --with-python --build-dir="build_python_$env:PYTHON_VERSION" link=shared variant=release threading=multi
         
